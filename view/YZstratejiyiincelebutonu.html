@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Garanti BBVA | Strateji Analizi</title>
+    <style>
+        :root {
+            --garanti-green: #007a33;
+            --garanti-accent: #00ab44;
+            --bg-gray: #f2f2f2;
+            --white: #ffffff;
+            --text-dark: #333;
+            --text-light: #666;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-gray);
+            margin: 0;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        /* Profil Özeti */
+        .profile-header {
+            background: var(--white);
+            border-left: 5px solid var(--garanti-green);
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+        }
+
+        .user-info h2 {
+            margin: 0;
+            color: var(--garanti-green);
+        }
+
+        .performance-tag {
+            background: #e8f5e9;
+            color: var(--garanti-green);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Ana İçerik */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        /* Fon Dağılım Grafiği (CSS ile Manuel Pasta Grafik Temsili) */
+        .distribution-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .fund-bar-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .fund-bar-track {
+            flex-grow: 1;
+            height: 12px;
+            background: #eee;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .fund-bar-fill {
+            height: 100%;
+            background: var(--garanti-green);
+        }
+
+        .fund-code {
+            width: 45px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .fund-percent {
+            width: 35px;
+            text-align: right;
+            font-size: 0.85rem;
+        }
+
+        /* Analiz Notları */
+        .analysis-note {
+            background: #f0f7ff;
+            border: 1px solid #c2e0ff;
+            padding: 15px;
+            font-size: 0.85rem;
+            color: #00529b;
+            margin-top: 20px;
+        }
+
+        /* Alt Butonlar */
+        .action-area {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-main {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .btn-primary {
+            background: var(--garanti-green);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--garanti-green);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            border: 1px solid var(--garanti-green);
+            color: var(--garanti-green);
+        }
+
+        /* Navigasyon */
+        header {
+            background: var(--garanti-green);
+            color: white;
+            padding: 1rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            cursor: pointer;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .nav-links li:hover {
+            opacity: 1;
+            border-bottom: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div style="font-size: 1.5rem; font-weight: bold; cursor: pointer;"
+            onclick="window.location.href='../index.html'">Garanti BBVA <span style="font-weight: 200;">Próximo</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="RiskPortfoy.html" style="color: inherit; text-decoration: none;">Portföyüm</a></li>
+            <li><a href="aiOptimizerPage.html" style="color: inherit; text-decoration: none;">AI Optimizasyon</a></li>
+            <li><a href="Top1.html" style="color: inherit; text-decoration: none;">Top %1 Sosyal</a></li>
+            <li><a href="BonusYatirim.html" style="color: inherit; text-decoration: none;">Bonus-Yatırım</a></li>
+        </ul>
+        <div class="user-info">Jhon Doe (Mühendislik) ▼</div>
+    </header>
+
+    <div class="container">
+        <div class="profile-header">
+            <div class="user-info">
+                <h2>Yazılım Mühendisi #42 Stratejisi</h2>
+                <p style="color:var(--text-light); margin:5px 0 0 0;">Risk Profili: Atılgan | Tercih: Teknoloji ve Hisse
+                    Ağırlıklı</p>
+            </div>
+            <div class="performance-tag">
+                Son 30 Gün: +%12.40
+            </div>
+        </div>
+
+        <div class="details-grid">
+            <div class="card">
+                <h3 style="margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px;">Portföy Dağılımı</h3>
+                <div class="distribution-box">
+                    <div class="fund-bar-container">
+                        <span class="fund-code">TTE</span>
+                        <div class="fund-bar-track">
+                            <div class="fund-bar-fill" style="width: 45%;"></div>
+                        </div>
+                        <span class="fund-percent">%45</span>
+                    </div>
+                    <div class="fund-bar-container">
+                        <span class="fund-code">GHS</span>
+                        <div class="fund-bar-track">
+                            <div class="fund-bar-fill" style="width: 30%; background: #00913d;"></div>
+                        </div>
+                        <span class="fund-percent">%30</span>
+                    </div>
+                    <div class="fund-bar-container">
+                        <span class="fund-code">IJP</span>
+                        <div class="fund-bar-track">
+                            <div class="fund-bar-fill" style="width: 15%; background: #6c5ce7;"></div>
+                        </div>
+                        <span class="fund-percent">%15</span>
+                    </div>
+                    <div class="fund-bar-container">
+                        <span class="fund-code">PPZ</span>
+                        <div class="fund-bar-track">
+                            <div class="fund-bar-fill" style="width: 10%; background: #999;"></div>
+                        </div>
+                        <span class="fund-percent">%10</span>
+                    </div>
+                </div>
+
+                <div class="analysis-note">
+                    <strong>Próximo AI Analizi:</strong> Bu strateji, BIST Teknoloji endeksindeki yükselişi (TTE)
+                    Garanti'nin sağlam hisse fonu (GHS) ile dengeleyerek yüksek büyüme hedeflemektedir. Beta katsayısı
+                    1.15'tir.
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 style="margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px;">Metrikler</h3>
+                <table style="width: 100%; font-size: 0.9rem;">
+                    <tr style="height: 40px;">
+                        <td style="color:var(--text-light)">Başarı Yüzdesi:</td>
+                        <td style="text-align: right; font-weight: bold;">%88</td>
+                    </tr>
+                    <tr style="height: 40px;">
+                        <td style="color:var(--text-light)">Sharpe Oranı:</td>
+                        <td style="text-align: right; font-weight: bold; color: var(--garanti-green);">2.1 (Mükemmel)
+                        </td>
+                    </tr>
+                    <tr style="height: 40px;">
+                        <td style="color:var(--text-light)">Kopya Sayısı:</td>
+                        <td style="text-align: right; font-weight: bold;">1,240 Kişi</td>
+                    </tr>
+                    <tr style="height: 40px;">
+                        <td style="color:var(--text-light)">Varlık Sınıfı:</td>
+                        <td style="text-align: right; font-weight: bold;">Hisse / Değişken</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="action-area">
+            <button class="btn-main btn-secondary">Takip Et (Bildirim Al)</button>
+            <button class="btn-main btn-primary">BU STRATEJİYİ KOPYALA</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

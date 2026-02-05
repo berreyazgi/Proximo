@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Garanti BBVA | Risk Profili ve Fon Yönetimi</title>
+    <title>Próximo | Atılgan Risk Profili</title>
     <style>
+        /* Ana şablonundaki CSS kodlarının aynısı buraya gelecek */
         :root {
             --garanti-green: #007a33;
             --garanti-light: #00ab44;
@@ -27,7 +28,6 @@
             margin: 40px auto;
         }
 
-        /* Profil Seçim Kartları */
         .risk-selector {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -40,33 +40,27 @@
             border: 2px solid var(--border);
             padding: 20px;
             text-align: center;
-            cursor: pointer;
-            transition: 0.3s;
             border-radius: 8px;
+            opacity: 0.6;
         }
 
         .risk-card:hover {
             transform: translateY(-5px);
-            border-color: var(--garanti-green);
+            border-color: #c0392b;
         }
 
         .risk-card.active {
-            border-color: var(--garanti-green);
-            background-color: #f0fdf4;
-            box-shadow: 0 4px 15px rgba(0, 122, 51, 0.1);
+            border-color: #c0392b;
+            background-color: #fdf2f2;
+            opacity: 1;
+            box-shadow: 0 4px 15px rgba(192, 57, 43, 0.1);
         }
 
         .risk-card h3 {
-            color: var(--garanti-green);
+            color: #c0392b;
             margin-top: 10px;
         }
 
-        .risk-card p {
-            font-size: 0.85rem;
-            color: #666;
-        }
-
-        /* Dinamik Fon Sepeti Kartı */
         .basket-card {
             background: var(--white);
             border: 1px solid var(--border);
@@ -78,14 +72,13 @@
 
         .section-title {
             grid-column: 1 / span 2;
-            border-bottom: 2px solid var(--garanti-green);
+            border-bottom: 2px solid #c0392b;
             padding-bottom: 10px;
             margin-bottom: 10px;
             font-size: 1.2rem;
             font-weight: bold;
         }
 
-        /* Grafik Temsili */
         .visual-distribution {
             display: flex;
             flex-direction: column;
@@ -117,7 +110,6 @@
             transition: width 0.5s ease-in-out;
         }
 
-        /* Metrikler */
         .metrics-panel {
             background: #fafafa;
             padding: 20px;
@@ -133,7 +125,7 @@
 
         .btn-save {
             grid-column: 1 / span 2;
-            background: var(--garanti-green);
+            background: #c0392b;
             color: white;
             border: none;
             padding: 15px;
@@ -142,10 +134,6 @@
             cursor: pointer;
             margin-top: 20px;
             border-radius: 4px;
-        }
-
-        .btn-save:hover {
-            background: var(--garanti-light);
         }
 
         /* Navigasyon */
@@ -183,7 +171,8 @@
 <body>
 
     <header>
-        <div style="font-size: 1.5rem; font-weight: bold;">Garanti BBVA <span style="font-weight: 200;">Próximo</span>
+        <div style="font-size: 1.5rem; font-weight: bold; cursor: pointer;"
+            onclick="window.location.href='../index.html'">Garanti BBVA <span style="font-weight: 200;">Próximo</span>
         </div>
         <ul class="nav-links">
             <li><a href="RiskPortfoy.html" style="color: inherit; text-decoration: none;">Portföyüm</a></li>
@@ -201,17 +190,17 @@
         </div>
 
         <div class="risk-selector">
-            <div class="risk-card" onclick="window.location.href='muhafazakarportfoy.html'">
+            <div class="risk-card" onclick="window.location.href='muhafazakarportfoy.html'" style="cursor: pointer;">
                 <div style="font-size: 2rem;">🛡️</div>
                 <h3>Muhafazakar</h3>
                 <p>Anaparayı koruma odaklı, düşük dalgalanma.</p>
             </div>
-            <div class="risk-card active">
+            <div class="risk-card" onclick="window.location.href='RiskPortfoy.html'" style="cursor: pointer;">
                 <div style="font-size: 2rem;">⚖️</div>
                 <h3>Dengeli</h3>
                 <p>Makul getiri ile kontrollü risk dengesi.</p>
             </div>
-            <div class="risk-card" onclick="window.location.href='atilganPortfoy.html'">
+            <div class="risk-card active">
                 <div style="font-size: 2rem;">🚀</div>
                 <h3>Atılgan</h3>
                 <p>Yüksek getiri hedefli, volatiliteye hazır.</p>
@@ -219,58 +208,58 @@
         </div>
 
         <div class="basket-card">
-            <div class="section-title">Profiline Göre Önerilen Fon Sepeti Dağılımı</div>
+            <div class="section-title">Atılgan Profil İçin Önerilen Dağılım</div>
 
             <div class="visual-distribution">
                 <div class="progress-item">
                     <span class="label">Hisse Senetleri</span>
                     <div class="bar-container">
-                        <div class="bar-fill" style="width: 40%; background: var(--garanti-green);"></div>
+                        <div class="bar-fill" style="width: 65%; background: var(--garanti-green);"></div>
                     </div>
-                    <span style="font-weight:bold;">%40</span>
+                    <span style="font-weight:bold;">%65</span>
                 </div>
                 <div class="progress-item">
-                    <span class="label">Değişken/Karma</span>
+                    <span class="label">Değişken/Teknoloji</span>
                     <div class="bar-container">
-                        <div class="bar-fill" style="width: 30%; background: #00913d;"></div>
+                        <div class="bar-fill" style="width: 25%; background: #6c5ce7;"></div>
                     </div>
-                    <span style="font-weight:bold;">%30</span>
+                    <span style="font-weight:bold;">%25</span>
                 </div>
                 <div class="progress-item">
                     <span class="label">Kıymetli Maden</span>
                     <div class="bar-container">
-                        <div class="bar-fill" style="width: 20%; background: #6c5ce7;"></div>
+                        <div class="bar-fill" style="width: 10%; background: #f1c40f;"></div>
                     </div>
-                    <span style="font-weight:bold;">%20</span>
+                    <span style="font-weight:bold;">%10</span>
                 </div>
                 <div class="progress-item">
                     <span class="label">Para Piyasası</span>
                     <div class="bar-container">
-                        <div class="bar-fill" style="width: 10%; background: #999;"></div>
+                        <div class="bar-fill" style="width: 0%; background: #999;"></div>
                     </div>
-                    <span style="font-weight:bold;">%10</span>
+                    <span style="font-weight:bold;">%0</span>
                 </div>
             </div>
 
             <div class="metrics-panel">
                 <div class="metric-row">
                     <span>Beklenen Yıllık Getiri:</span>
-                    <span style="font-weight:bold; color:var(--garanti-green);">%52 - %64</span>
+                    <span style="font-weight:bold; color:#c0392b;">%85 - %120</span>
                 </div>
                 <div class="metric-row">
                     <span>Volatilite (Risk):</span>
-                    <span style="font-weight:bold;">Orta Seviye</span>
+                    <span style="font-weight:bold;">Yüksek Seviye</span>
                 </div>
                 <div class="metric-row">
                     <span>Önerilen Vade:</span>
-                    <span style="font-weight:bold;">6 Ay+</span>
+                    <span style="font-weight:bold;">12 Ay+</span>
                 </div>
                 <div style="margin-top: 15px; font-size: 0.8rem; color: #666; font-style: italic;">
-                    *Bu dağılım Próximo AI tarafından mevcut piyasa koşullarına göre optimize edilmiştir.
+                    *Yüksek getiri hedefi beraberinde fiyat dalgalanmalarını getirir.
                 </div>
             </div>
 
-            <button class="btn-save">RİSK PROFİLİMİ GÜNCELLE VE UYGULA</button>
+            <button class="btn-save">ATILGAN PROFİLİ AKTİF ET VE OPTİMİZE ET</button>
         </div>
     </div>
 

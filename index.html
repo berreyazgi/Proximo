@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,7 @@
         :root {
             --garanti-green: #007a33;
             --garanti-accent: #00ab44;
-            --ai-purple: #6c5ce7; /* AI özellikleri için modern bir mor */
+            --ai-purple: #6c5ce7;
             --bg-gray: #f8f9fa;
             --white: #ffffff;
             --text-dark: #2d3436;
@@ -29,21 +30,40 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links li { cursor: pointer; opacity: 0.9; font-weight: 500; }
-        .nav-links li:hover { opacity: 1; border-bottom: 2px solid white; }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
 
-        .container { width: 85%; margin: 30px auto; display: grid; grid-template-columns: 2fr 1fr; gap: 25px; }
+        .nav-links li {
+            cursor: pointer;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .nav-links li:hover {
+            opacity: 1;
+            border-bottom: 2px solid white;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
 
         /* Ana Kartlar */
         .main-card {
             background: var(--white);
             border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             margin-bottom: 25px;
         }
 
@@ -57,7 +77,7 @@
         }
 
         .ai-badge {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.75rem;
@@ -84,10 +104,17 @@
             transition: 0.3s;
         }
 
-        .btn-optimize:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .btn-optimize:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
 
         /* Leaderboard (Social Proof) */
-        .leaderboard-list { list-style: none; padding: 0; }
+        .leaderboard-list {
+            list-style: none;
+            padding: 0;
+        }
+
         .leaderboard-item {
             display: flex;
             align-items: center;
@@ -95,9 +122,21 @@
             border-bottom: 1px solid #eee;
         }
 
-        .rank { width: 30px; font-weight: bold; color: var(--garanti-green); }
-        .user-tag { flex-grow: 1; font-size: 0.9rem; }
-        .return-rate { color: #00b894; font-weight: bold; }
+        .rank {
+            width: 30px;
+            font-weight: bold;
+            color: var(--garanti-green);
+        }
+
+        .user-tag {
+            flex-grow: 1;
+            font-size: 0.9rem;
+        }
+
+        .return-rate {
+            color: #00b894;
+            font-weight: bold;
+        }
 
         /* Nudge / Bonus Hook */
         .bonus-convert {
@@ -119,92 +158,104 @@
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <div style="font-size: 1.5rem; font-weight: bold;">Garanti BBVA <span style="font-weight: 200;">Próximo</span></div>
-    <ul class="nav-links">
-        <li><a href="RiskPortfoy.html" style="color: inherit; text-decoration: none;">Portföyüm</a></li>
-        <li><a href="aiOptimizerPage.html" style="color: inherit; text-decoration: none;">AI Optimizasyon</a></li>
-        <li><a href="Top1.html" style="color: inherit; text-decoration: none;">Top %1 Sosyal</a></li>
-        <li><a href="BonusYatirim.html" style="color: inherit; text-decoration: none;">Bonus-Yatırım</a></li>
-    </ul>
-    <div class="user-info">Jhon Doe (Mühendislik) ▼</div>
-</header>
+    <header>
+        <div style="font-size: 1.5rem; font-weight: bold; cursor: pointer;" onclick="window.location.href='index.html'">
+            Garanti BBVA <span style="font-weight: 200;">Próximo</span></div>
+        <ul class="nav-links">
+            <li><a href="view/RiskPortfoy.html" style="color: inherit; text-decoration: none;">Portföyüm</a></li>
+            <li><a href="view/aiOptimizerPage.html" style="color: inherit; text-decoration: none;">AI Optimizasyon</a>
+            </li>
+            <li><a href="view/Top1.html" style="color: inherit; text-decoration: none;">Top %1 Sosyal</a></li>
+            <li><a href="view/BonusYatirim.html" style="color: inherit; text-decoration: none;">Bonus-Yatırım</a></li>
+        </ul>
+        <div class="user-info">Jhon Doe (Mühendislik) ▼</div>
+    </header>
 
-<div class="container">
-    <div class="left-col">
-        <div class="ai-engine-box">
-            <span class="ai-badge">AI Yield-Optimizer Aktif</span>
-            <h2 style="margin: 15px 0 5px 0;">Portföy Verimliliğin: %94</h2>
-            <p style="opacity: 0.9; font-size: 0.9rem;">Modern Portföy Teorisi (Markowitz) modeline göre sepetin optimize edilebilir.</p>
-            
-            <div class="yield-optimizer">
-                <div>
-                    <div style="font-size: 0.8rem; opacity: 0.8;">Beklenen Haftalık Getiri</div>
-                    <div style="font-size: 1.5rem; font-weight: bold;">+%4.2</div>
+    <div class="container">
+        <div class="left-col">
+            <div class="ai-engine-box">
+                <span class="ai-badge">AI Yield-Optimizer Aktif</span>
+                <h2 style="margin: 15px 0 5px 0;">Portföy Verimliliğin: %94</h2>
+                <p style="opacity: 0.9; font-size: 0.9rem;">Modern Portföy Teorisi (Markowitz) modeline göre sepetin
+                    optimize edilebilir.</p>
+
+                <div class="yield-optimizer">
+                    <div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Beklenen Haftalık Getiri</div>
+                        <div style="font-size: 1.5rem; font-weight: bold;">+%4.2</div>
+                    </div>
+                    <button class="btn-optimize" onclick="window.location.href='view/aiOptimizerPage.html'">Şimdi
+                        Re-Balance Et</button>
                 </div>
-                <button class="btn-optimize" onclick="window.location.href='aiOptimizerPage.html'">Şimdi Re-Balance Et</button>
+            </div>
+
+            <div class="main-card" style="margin-top: 25px;">
+                <h3>Aktif Varlıklarım</h3>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                    <div>
+                        <span style="color: #666; font-size: 0.9rem;">Toplam Birikim</span>
+                        <div style="font-size: 2rem; font-weight: bold;">45.230,00 TL</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div class="status-pill">Düşük Risk Profili</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bonus-convert">
+                <div>
+                    <strong>Bonus'ların Değerlensin!</strong><br>
+                    <small>Şu an 450 TL birikmiş Bonus'un var. Otomatik fon alımı yapılsın mı?</small>
+                </div>
+                <button
+                    style="background: var(--garanti-green); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;"
+                    onclick="window.location.href='view/BonusYatirim.html'">Otomatik Dönüştür</button>
             </div>
         </div>
 
-        <div class="main-card" style="margin-top: 25px;">
-            <h3>Aktif Varlıklarım</h3>
-            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-                <div>
-                    <span style="color: #666; font-size: 0.9rem;">Toplam Birikim</span>
-                    <div style="font-size: 2rem; font-weight: bold;">45.230,00 TL</div>
-                </div>
-                <div style="text-align: right;">
-                    <div class="status-pill">Düşük Risk Profili</div>
-                </div>
-            </div>
-        </div>
+        <div class="right-col">
+            <div class="main-card">
+                <h3 style="margin-top: 0;">Proof of Success</h3>
+                <p style="font-size: 0.8rem; color: #666;">Seninle benzer risk profiline sahip "En Başarılı %1" ne
+                    yapıyor?</p>
 
-        <div class="bonus-convert">
-            <div>
-                <strong>Bonus'ların Değerlensin!</strong><br>
-                <small>Şu an 450 TL birikmiş Bonus'un var. Otomatik fon alımı yapılsın mı?</small>
+                <ul class="leaderboard-list">
+                    <li class="leaderboard-item">
+                        <span class="rank">1.</span>
+                        <span class="user-tag">Yazılım Mühendisi #42</span>
+                        <span class="return-rate">+%18.4</span>
+                    </li>
+                    <li class="leaderboard-item">
+                        <span class="rank">2.</span>
+                        <span class="user-tag">Endüstri Öğrencisi #12</span>
+                        <span class="return-rate">+%16.2</span>
+                    </li>
+                    <li class="leaderboard-item">
+                        <span class="rank">3.</span>
+                        <span class="user-tag">Tıp Asistanı #88</span>
+                        <span class="return-rate">+%14.9</span>
+                    </li>
+                </ul>
+                <button
+                    style="width: 100%; margin-top: 15px; background: none; border: 1px solid var(--garanti-green); color: var(--garanti-green); padding: 10px; border-radius: 5px; font-weight: bold; cursor: pointer;"
+                    onclick="window.location.href='view/Top1.html'">
+                    Stratejiyi Kopyala
+                </button>
             </div>
-            <button style="background: var(--garanti-green); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;" onclick="window.location.href='BonusYatirim.html'">Otomatik Dönüştür</button>
+
+            <div class="main-card">
+                <h4 style="margin: 0;">Akademik Köşe</h4>
+                <p style="font-size: 0.75rem; color: #7f8c8d; line-height: 1.4;">
+                    Próximo, <b>Nudge Theory</b> prensiplerini kullanarak finansal okuryazarlığı artırır.
+                    Yield-Optimizer, genetik algoritmalar ile 12.000+ simülasyon yaparak en ideal sepeti bulur.
+                </p>
+            </div>
         </div>
     </div>
-
-    <div class="right-col">
-        <div class="main-card">
-            <h3 style="margin-top: 0;">Proof of Success</h3>
-            <p style="font-size: 0.8rem; color: #666;">Seninle benzer risk profiline sahip "En Başarılı %1" ne yapıyor?</p>
-            
-            <ul class="leaderboard-list">
-                <li class="leaderboard-item">
-                    <span class="rank">1.</span>
-                    <span class="user-tag">Yazılım Mühendisi #42</span>
-                    <span class="return-rate">+%18.4</span>
-                </li>
-                <li class="leaderboard-item">
-                    <span class="rank">2.</span>
-                    <span class="user-tag">Endüstri Öğrencisi #12</span>
-                    <span class="return-rate">+%16.2</span>
-                </li>
-                <li class="leaderboard-item">
-                    <span class="rank">3.</span>
-                    <span class="user-tag">Tıp Asistanı #88</span>
-                    <span class="return-rate">+%14.9</span>
-                </li>
-            </ul>
-            <button style="width: 100%; margin-top: 15px; background: none; border: 1px solid var(--garanti-green); color: var(--garanti-green); padding: 10px; border-radius: 5px; font-weight: bold; cursor: pointer;" onclick="window.location.href='Top1.html'">
-                Stratejiyi Kopyala
-            </button>
-        </div>
-
-        <div class="main-card">
-            <h4 style="margin: 0;">Akademik Köşe</h4>
-            <p style="font-size: 0.75rem; color: #7f8c8d; line-height: 1.4;">
-                Próximo, <b>Nudge Theory</b> prensiplerini kullanarak finansal okuryazarlığı artırır. Yield-Optimizer, genetik algoritmalar ile 12.000+ simülasyon yaparak en ideal sepeti bulur.
-            </p>
-        </div>
-    </div>
-</div>
 
 </body>
+
 </html>
