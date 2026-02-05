@@ -156,6 +156,52 @@
             border-radius: 12px;
             font-size: 0.8rem;
         }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem 5%;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0;
+            }
+
+            .container {
+                width: 95%;
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .yield-optimizer {
+                flex-direction: column;
+                gap: 15px;
+                align-items: stretch;
+                text-align: center;
+            }
+
+            .btn-optimize {
+                width: 100%;
+            }
+
+            .main-card {
+                padding: 20px;
+            }
+
+            .bonus-convert {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .bonus-convert button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 

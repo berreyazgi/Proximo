@@ -198,6 +198,54 @@
             opacity: 1;
             border-bottom: 2px solid white;
         }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem 5%;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0;
+            }
+
+            .container {
+                width: 95%;
+                margin: 20px auto;
+            }
+
+            .bonus-hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                padding: 25px;
+            }
+
+            .bonus-hero div[style*="text-align: right"] {
+                text-align: center !important;
+            }
+
+            .grid-layout {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .toggle-section {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .growth-path {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+        }
     </style>
 </head>
 
