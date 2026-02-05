@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garanti BBVA | Próximo AI Portföy Yönetimi</title>
+    <style>
+        :root {
+            --garanti-green: #007a33;
+            --garanti-light: #00ab44;
+            --ai-purple: #6c5ce7;
+            --bg-gray: #f4f4f4;
+            --border-color: #e0e0e0;
+            --text-dark: #333;
+            --text-gray: #666;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-gray);
+            margin: 0;
+            color: var(--text-dark);
+        }
+
+        /* Üst Bilgi Çubuğu */
+        .top-header {
+            background-color: var(--garanti-green);
+            color: white;
+            padding: 15px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+        }
+
+        /* Ana Optimizasyon Kartı */
+        .opt-card {
+            background: white;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid var(--garanti-green);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .ai-status {
+            background: #e8f5e9;
+            color: var(--garanti-green);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Karşılaştırma Paneli */
+        .comparison-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .chart-box {
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .chart-visual {
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            padding: 0 10px 40px 10px;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+        }
+
+        .bar {
+            width: 40px;
+            position: relative;
+            transition: height 0.8s ease-in-out;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .bar-current { background-color: #99aab5; }
+        .bar-proposed { background-color: var(--garanti-green); }
+
+        .bar-label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: var(--text-gray);
+        }
+
+        /* Liste Görünümü */
+        .fund-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .fund-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        /* Teknik Parametreler (Footer) */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .tech-stat small { display: block; color: var(--text-gray); font-size: 0.7rem; text-transform: uppercase; }
+        .tech-stat span { font-weight: bold; font-size: 1rem; color: var(--garanti-green); }
+
+        /* Butonlar */
+        .btn-confirm {
+            background-color: var(--garanti-green);
+            color: white;
+            border: none;
+            padding: 18px;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 25px;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+
+        .btn-confirm:hover { background-color: var(--garanti-light); }
+
+        .pulse-dot {
+            height: 10px;
+            width: 10px;
+            background-color: var(--garanti-green);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.9); opacity: 1; }
+            70% { transform: scale(1.5); opacity: 0; }
+            100% { transform: scale(0.9); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-header">
+    <div style="font-size: 1.2rem; font-weight: bold;">Garanti BBVA <span style="font-weight: 300;">Próximo</span></div>
+    <div>Portföy Analiz Merkezi</div>
+</div>
+
+<div class="container">
+    <div class="opt-card">
+        <div class="header-flex">
+            <div>
+                <h2 style="margin: 0; color: var(--garanti-green);">AI Yield-Optimizer</h2>
+                <p style="margin: 5px 0 0 0; color: var(--text-gray); font-size: 0.9rem;">
+                    Modern Portföy Teorisi tabanlı dinamik yeniden dengeleme.
+                </p>
+            </div>
+            <div class="ai-status">
+                <span class="pulse-dot"></span> ANALİZ TAMAMLANDI
+            </div>
+        </div>
+
+        <div class="comparison-wrapper">
+            <div class="chart-box">
+                <h4 style="margin-top: 0;">Mevcut Dağılım</h4>
+                <div class="chart-visual">
+                    <div class="bar bar-current" style="height: 75%;"><span class="bar-label">PPZ</span></div>
+                    <div class="bar bar-current" style="height: 40%;"><span class="bar-label">GBL</span></div>
+                    <div class="bar bar-current" style="height: 25%;"><span class="bar-label">TDB</span></div>
+                    <div class="bar bar-current" style="height: 15%;"><span class="bar-label">NAKİT</span></div>
+                </div>
+                <ul class="fund-list">
+                    <li class="fund-item"><span>Para Piyasası (PPZ)</span> <span>%55</span></li>
+                    <li class="fund-item"><span>Dış Borçlanma (GBL)</span> <span>%25</span></li>
+                    <li style="color: #d32f2f; font-size: 0.8rem; padding-top: 10px;">⚠️ Atıl nakit verimliliği %12 daha düşük.</li>
+                </ul>
+            </div>
+
+            <div class="chart-box" style="border: 2px solid var(--garanti-green); background-color: #f0fdf4;">
+                <h4 style="margin-top: 0; color: var(--garanti-green);">AI Önerisi (Optimize)</h4>
+                <div class="chart-visual">
+                    <div class="bar bar-proposed" style="height: 20%;"><span class="bar-label">PPZ</span></div>
+                    <div class="bar bar-proposed" style="height: 85%;"><span class="bar-label">GHS</span></div>
+                    <div class="bar bar-proposed" style="height: 95%;"><span class="bar-label">TTE</span></div>
+                    <div class="bar bar-proposed" style="height: 60%;"><span class="bar-label">IJP</span></div>
+                </div>
+                <ul class="fund-list">
+                    <li class="fund-item"><b>GHS - Garanti Hisse</b> <span style="color: var(--garanti-green);">+%35</span></li>
+                    <li class="fund-item"><b>TTE - Teknoloji (Yeni)</b> <span style="color: var(--garanti-green);">+%25</span></li>
+                    <li style="color: var(--garanti-green); font-size: 0.8rem; padding-top: 10px; font-weight: bold;">
+                        🚀 Hedef Haftalık Getiri: %4.20
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tech-grid">
+            <div class="tech-stat">
+                <small>Matematiksel Model</small>
+                <span>Mean-Variance Opt.</span>
+            </div>
+            <div class="tech-stat">
+                <small>Sharpe Oranı</small>
+                <span>1.1 → 1.85</span>
+            </div>
+            <div class="tech-stat">
+                <small>Risk Skoru</small>
+                <span>Dengeli (4/7)</span>
+            </div>
+            <div class="tech-stat">
+                <small>İşlem Kaynağı</small>
+                <span>TEFAS / Garanti</span>
+            </div>
+        </div>
+
+        <button class="btn-confirm">PORTFÖYÜMÜ GÜNCELLE VE UYGULA</button>
+        
+        <p style="font-size: 0.75rem; color: var(--text-gray); text-align: center; margin-top: 15px;">
+            Yatırım kararları, geçmiş verilere dayalı AI simülasyonları ile hesaplanmıştır. Garanti BBVA Próximo güvencesiyle.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

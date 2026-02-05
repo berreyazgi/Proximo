@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Garanti BBVA | Bonus'larını Yatırıma Dönüştür</title>
+    <style>
+        :root {
+            --garanti-green: #007a33;
+            --garanti-accent: #00ab44;
+            --bonus-orange: #ff9800;
+            --bg-gray: #f8f9fa;
+            --white: #ffffff;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-color: var(--bg-gray);
+            margin: 0;
+            color: var(--text-dark);
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        /* Üst Özet Kartı */
+        .bonus-hero {
+            background: linear-gradient(135deg, var(--garanti-green) 0%, #1a4a2e 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bonus-hero::after {
+            content: "Bonus";
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            font-size: 8rem;
+            font-weight: 900;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+
+        .bonus-amount { font-size: 3rem; font-weight: bold; margin: 10px 0; }
+        .bonus-amount span { font-size: 1.2rem; opacity: 0.8; }
+
+        /* Ana İçerik */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 25px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        /* Otomatik Talimat Bölümü */
+        .toggle-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* Tahminleme (Simülasyon) Alanı */
+        .simulation-box {
+            margin-top: 25px;
+            padding: 20px;
+            background: #f1f8e9;
+            border-radius: 8px;
+        }
+
+        .growth-path {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .path-step { flex: 1; }
+        .path-step small { color: #666; font-size: 0.75rem; }
+        .path-step div { font-weight: bold; color: var(--garanti-green); }
+
+        /* Switch Butonu */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        input:checked + .slider { background-color: var(--garanti-green); }
+
+        .btn-action {
+            background: var(--bonus-orange);
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-action:hover { background: #e68a00; transform: translateY(-2px); }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="bonus-hero">
+        <div>
+            <div style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Birikmiş Bonus Bakiyesi</div>
+            <div class="bonus-amount">450,25 <span>TL</span></div>
+            <p style="margin: 0; opacity: 0.9;">Bu tutarla <b>8.4 adet</b> GHS Fonu alabilirsin.</p>
+        </div>
+        <div style="text-align: right;">
+            <div style="font-size: 0.8rem; opacity: 0.8;">Son 12 Ay Kazancı</div>
+            <div style="font-size: 1.5rem; font-weight: bold;">+1,240 TL</div>
+        </div>
+    </div>
+
+    <div class="grid-layout">
+        <div class="card">
+            <h3 style="margin-top: 0; color: var(--garanti-green);">Akıllı Dönüşüm Talimatı</h3>
+            <p style="font-size: 0.9rem; color: #666;">
+                Harcamalarından kazandığın Bonus'lar vadesiz hesabında atıl kalmasın. Próximo AI, her ay sonu biriken Bonus'larını otomatik olarak yatırım fonuna aktarır.
+            </p>
+
+            <div class="toggle-section">
+                <div>
+                    <strong>Otomatik Yatırım Talimatı</strong><br>
+                    <small>Her 50 TL biriktiğinde otomatik alım yap.</small>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="simulation-box">
+                <h4 style="margin-top: 0;">Potansiyel Büyüme (1 Yıllık)</h4>
+                <p style="font-size: 0.8rem;">Eğer Bonus'larını harcamayıp <b>GHS (Garanti Hisse)</b> fonuna aktarırsan:</p>
+                
+                <div class="growth-path">
+                    <div class="path-step">
+                        <small>Başlangıç</small>
+                        <div>450 TL</div>
+                    </div>
+                    <div style="display: flex; align-items: center;">➔</div>
+                    <div class="path-step">
+                        <small>Yıl Sonu (Tahmin)</small>
+                        <div style="font-size: 1.2rem;">980 TL</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn-action">ŞİMDİ YATIRIMA DÖNÜŞTÜR</button>
+        </div>
+
+        <div class="side-content">
+            <div class="card" style="margin-bottom: 20px; border-top: 4px solid var(--bonus-orange);">
+                <h4 style="margin-top: 0;">Dürtme Teorisi (Nudge)</h4>
+                <p style="font-size: 0.85rem; line-height: 1.6; color: #555;">
+                    Richard Thaler'ın ödüllü teorisine göre; kullanıcılar "bedava" kazandıkları ödülleri (Bonus) kaybetme korkusu olmadan yatırıma yönlendirmeye daha meyillidir.
+                </p>
+                <hr style="border: 0; border-top: 1px solid #eee;">
+                <p style="font-size: 0.85rem; font-style: italic;">
+                    "Küçük tasarruflar, bileşik getiri etkisiyle büyük varlıklara dönüşür."
+                </p>
+            </div>
+
+            <div class="card">
+                <h4 style="margin-top: 0;">Sıkça Sorulanlar</h4>
+                <details style="font-size: 0.85rem; margin-bottom: 10px;">
+                    <summary style="cursor: pointer; font-weight: bold;">Komisyon alınıyor mu?</summary>
+                    <p>Hayır, Bonus dönüşümlerinde banka komisyonu uygulanmaz.</p>
+                </details>
+                <details style="font-size: 0.85rem;">
+                    <summary style="cursor: pointer; font-weight: bold;">Hangi fonlara yatırım yapılır?</summary>
+                    <p>Risk profilinize uygun olarak seçilen GHS, TTE veya PPZ fonlarına aktarılır.</p>
+                </details>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

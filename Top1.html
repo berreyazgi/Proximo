@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Garanti BBVA | Próximo Sosyal Yatırım</title>
+    <style>
+        :root {
+            --garanti-green: #007a33;
+            --garanti-light: #00ab44;
+            --bg-gray: #f8f9fa;
+            --white: #ffffff;
+            --text-dark: #333;
+            --text-gray: #666;
+            --gold: #d4af37;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-gray);
+            margin: 0;
+            color: var(--text-dark);
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        /* Üst Başlık */
+        .social-header {
+            background: white;
+            padding: 25px;
+            border-bottom: 3px solid var(--garanti-green);
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-header h2 {
+            margin: 0;
+            color: var(--garanti-green);
+        }
+
+        /* Ana Düzen: İki Kolon */
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        /* Liderlik Tablosu */
+        .leaderboard-card {
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+        }
+
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .leaderboard-table th {
+            text-align: left;
+            color: var(--text-gray);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            padding: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .leaderboard-table td {
+            padding: 15px 10px;
+            border-bottom: 1px solid #f1f1f1;
+            vertical-align: middle;
+        }
+
+        /* Kullanıcı Bilgisi */
+        .user-tag {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            background: #eee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--garanti-green);
+        }
+
+        .badge-student {
+            background: #e1f5fe;
+            color: #039be5;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        /* Getiri Oranı */
+        .return-pos {
+            color: var(--garanti-light);
+            font-weight: bold;
+        }
+
+        /* Sağ Kolon: Detay & Filtre */
+        .side-card {
+            background: white;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 25px;
+        }
+
+        .btn-copy {
+            background: var(--garanti-green);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transition: 0.2s;
+        }
+
+        .btn-copy:hover {
+            background: var(--garanti-light);
+        }
+
+        .info-box {
+            background: #fff9c4;
+            padding: 15px;
+            font-size: 0.85rem;
+            border-left: 4px solid #fbc02d;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="social-header">
+            <div>
+                <h2>Top %1 Sosyal <span style="font-weight: 300; font-size: 1rem; color: #666;">| Akran Kanıtı (Social
+                        Proof)</span></h2>
+                <p style="margin: 5px 0 0 0; color: var(--text-gray); font-size: 0.9rem;">
+                    Seninle benzer risk profilindeki en başarılı yatırımcıların gerçek (anonim) portföyleri.
+                </p>
+            </div>
+            <div style="text-align: right;">
+                <span style="font-size: 0.8rem; color: var(--text-gray);">Senin Sıralaman</span>
+                <div style="font-size: 1.2rem; font-weight: bold; color: var(--garanti-green);">#2,412 / 120,400</div>
+            </div>
+        </div>
+
+        <div class="layout-grid">
+            <div class="leaderboard-card">
+                <h4 style="margin-top: 0;">Bu Ayın En Başarılı Portföyleri</h4>
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Sıra</th>
+                            <th>Yatırımcı Projeli</th>
+                            <th>Haftalık Getiri</th>
+                            <th>Risk Skoru</th>
+                            <th>İşlem</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span style="color:var(--gold); font-weight:bold;">1.</span></td>
+                            <td>
+                                <div class="user-tag">
+                                    <div class="avatar">Y</div>
+                                    <div>
+                                        <strong>Yazılım Mühendisi #42</strong><br>
+                                        <span class="badge-student">İTÜ / 4. Sınıf</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="return-pos">+%12.40</td>
+                            <td>Dengeli</td>
+                            <td><button class="btn-copy"
+                                    onclick="window.location.href='YZstratejiyiincelebutonu.html'">Stratejiyi
+                                    İncele</button></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-weight:bold;">2.</span></td>
+                            <td>
+                                <div class="user-tag">
+                                    <div class="avatar">E</div>
+                                    <div>
+                                        <strong>Endüstriyel Tasarım #11</strong><br>
+                                        <span class="badge-student">ODTÜ / Mezun</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="return-pos">+%10.15</td>
+                            <td>Atılgan</td>
+                            <td><button class="btn-copy"
+                                    onclick="window.location.href='YZstratejiyiincelebutonu.html'">Stratejiyi
+                                    İncele</button></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-weight:bold;">3.</span></td>
+                            <td>
+                                <div class="user-tag">
+                                    <div class="avatar">T</div>
+                                    <div>
+                                        <strong>Tıp Asistanı #88</strong><br>
+                                        <span class="badge-student">Hacettepe / 2. Sınıf</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="return-pos">+%9.80</td>
+                            <td>Muhafazakar</td>
+                            <td><button class="btn-copy"
+                                    onclick="window.location.href='YZstratejiyiincelebutonu.html'">Stratejiyi
+                                    İncele</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="side-col">
+                <div class="side-card">
+                    <h4 style="margin-top: 0; color: var(--garanti-green);">Neden Bu Liste?</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-gray); line-height: 1.5;">
+                        Próximo, Garanti BBVA havuzundaki milyonlarca anonim veriyi analiz ederek senin risk grubundaki
+                        <strong>en başarılı %1'lik</strong> kesimi listeler.
+                    </p>
+                    <div class="info-box">
+                        <strong>Mühendislik Notu:</strong><br>
+                        Bu tablo "Social Proof Theory" üzerine kurulmuştur. Manipülasyonu engellemek için sadece banka
+                        onaylı <u>gerçekleşmiş</u> işlemler baz alınır.
+                    </div>
+                </div>
