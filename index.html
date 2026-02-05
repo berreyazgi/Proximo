@@ -160,36 +160,83 @@
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                padding: 1rem 5%;
+                padding: 1rem;
                 gap: 15px;
                 text-align: center;
             }
 
             .nav-links {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
                 padding: 0;
+                width: 100%;
+            }
+
+            .nav-links li {
+                width: 100%;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
 
             .container {
                 width: 95%;
+                margin: 20px auto;
                 grid-template-columns: 1fr;
-                gap: 15px;
+                /* Force single column */
+                display: flex;
+                /* Flex is better for explicit ordering if grid fails */
+                flex-direction: column;
+                gap: 20px;
             }
 
+            /* Ensure left-col comes first, right-col second */
+            .left-col {
+                order: 1;
+                width: 100%;
+            }
+
+            .right-col {
+                order: 2;
+                width: 100%;
+            }
+
+            .ai-engine-box,
+            .main-card,
+            .bonus-convert {
+                padding: 20px;
+            }
+
+            /* Typography updates */
+            body {
+                font-size: 16px;
+                /* Base size increase */
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            /* Yield Optimizer Mobile */
             .yield-optimizer {
                 flex-direction: column;
                 gap: 15px;
-                align-items: stretch;
+                align-items: center;
+                text-align: center;
+            }
+
+            .yield-optimizer>div {
+                width: 100%;
                 text-align: center;
             }
 
             .btn-optimize {
                 width: 100%;
-            }
-
-            .main-card {
-                padding: 20px;
+                padding: 15px;
+                /* Larger touch target */
             }
 
             .bonus-convert {
@@ -200,6 +247,7 @@
 
             .bonus-convert button {
                 width: 100%;
+                padding: 12px;
             }
         }
     </style>

@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Próximo | Atılgan Risk Profili</title>
     <style>
         /* Ana şablonundaki CSS kodlarının aynısı buraya gelecek */
@@ -169,37 +170,65 @@
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                padding: 1rem 5%;
+                padding: 1rem;
                 gap: 15px;
                 text-align: center;
             }
 
             .nav-links {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
                 padding: 0;
+                width: 100%;
+            }
+
+            .nav-links li {
+                width: 100%;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
 
             .container {
                 width: 95%;
+                margin: 20px auto;
             }
 
             .risk-selector {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
 
             .basket-card {
                 grid-template-columns: 1fr;
                 padding: 20px;
-                gap: 20px;
+                gap: 25px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Typography Scale */
+            body {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
             }
 
             .section-title {
                 grid-column: 1;
+                font-size: 1.3rem;
             }
 
             .btn-save {
                 grid-column: 1;
+                padding: 15px;
+                font-size: 1.1rem;
+            }
+
+            .visual-distribution,
+            .metrics-panel {
+                width: 100%;
             }
         }
     </style>
